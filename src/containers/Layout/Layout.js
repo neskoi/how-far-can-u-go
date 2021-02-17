@@ -7,7 +7,9 @@ import BottomBar from '../../components/UI/bottomBar/bottomBar';
 const layout = ({children}) => (
     <div className='Layout'>
         <Navbar/>
-            {children}
+            <div className="Body">
+                {children}
+            </div>
         <BottomBar/>
     </div>
 );

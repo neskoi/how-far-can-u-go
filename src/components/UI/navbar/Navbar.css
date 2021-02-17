@@ -6,7 +6,6 @@
     width: 100%;
     background-color: #363636;
     border-bottom: 3px groove rgb(0, 255, 191);
-    color: antiquewhite;    
     box-sizing: border-box;
 }
 
@@ -16,19 +15,26 @@
 }
 
 .Navbar ul{
+    min-width: 350px;
     display: flex;
     flex-flow: row;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     height: 100%;
 }
 
 .Navbar li{
-
-    width: 100px;
+    margin-right: 10px;
+    width: 120px;
 }
 
 .Navbar li:hover{
     background-color: #262626;
     border: 1px solid whitesmoke;
+}
+
+.Navbar a{
+    display: block;
+    padding: 5px 25px;
+    color: antiquewhite;
 }

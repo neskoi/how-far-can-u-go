@@ -51,10 +51,11 @@ const Core = () => {
             <Score distance={gameInfo.paths - 1}/>
             {pathsToRender}
             <Modal visible={!gameInfo.isPlaying} toClose={restartGame}>
-                <h1>You lose bro, so sad! ;-;</h1>
+                <h1>You lose bro.<br/>;-; So sad! ;-;</h1>
                 <br/>
-                <h3>Your total score: {gameInfo.paths - 1}</h3>
-                <button onClick={restartGame}>Again!</button>
+                <h3>Your total score:</h3>
+                <h1>{gameInfo.paths - 1}</h1>
+                <button onClick={restartGame}>Try Again!</button>
             </Modal>
         </div>
     )

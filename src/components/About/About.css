@@ -1,0 +1,38 @@
+.About{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 370px;
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #565656;
+    border-radius: 5px;
+}
+
+.About > a {
+    color: black;
+    text-decoration: none;
+}
+
+.About > a:hover {
+    color: goldenrod;
+}
+
+.GitLogo{
+    height: 64px;
+    width: 64px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../../assets/icons/GitHub-Mark-64px.png");
+}
+
+.GitLogo:hover{
+    transform: scale(1.1);
+}
+
+.GitLogo:active{
+    transform: scale(0.9);
+}
+
