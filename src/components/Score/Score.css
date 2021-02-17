@@ -1,10 +1,13 @@
 .Score{
-    display: block;
-    height: 70px;
-    width: 70px;
-    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 60px;
+    margin: 0 auto 20px auto;
     border: 3px groove #262626;
     border-radius: 10%;
     text-align: center;
     box-sizing: border-box;
+    font-size: 24px;
 }

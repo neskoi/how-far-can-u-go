@@ -1,15 +1,10 @@
 .Navbar{
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
     height: 60px;
     width: 100%;
     background-color: #363636;
-    border-radius: 0 0 10px 10px;
     border-bottom: 3px groove rgb(0, 255, 191);
     color: antiquewhite;    
     box-sizing: border-box;
@@ -18,4 +13,22 @@
 .Navbar *{
     list-style: none;
     text-decoration: none;
+}
+
+.Navbar ul{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: end;
+    height: 100%;
+}
+
+.Navbar li{
+
+    width: 100px;
+}
+
+.Navbar li:hover{
+    background-color: #262626;
+    border: 1px solid whitesmoke;
 }

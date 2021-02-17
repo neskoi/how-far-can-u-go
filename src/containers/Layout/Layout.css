@@ -1,7 +1,6 @@
 .Layout {
     height: 100vh;
     width: 100vw;
-    background-color: crimson;
 }
 
 .Layout > div:nth-of-type(1){

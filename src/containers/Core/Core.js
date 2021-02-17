@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Core.css';
 import Path from '../../components/Path/Path';
 import Score from '../../components/Score/Score';
+import Modal from '../../components/UI/Modal/Modal';
 
 // TODO mover essa func, talvez.
 function shuffleArray(array) {
@@ -22,7 +23,11 @@ const Core = () => {
     }
 
     const wrongPathHandler = () => {
-        setGameInfo({...gameInfo, paths: 1});
+        setGameInfo({...gameInfo, isPlaying: false});
+    }
+
+    const restartGame = () => {
+        setGameInfo({paths: 1, isPlaying: true});
     }
 
     let pathsToRender = [];
@@ -45,20 +50,14 @@ const Core = () => {
         <div className='Core'>
             <Score distance={gameInfo.paths - 1}/>
             {pathsToRender}
+            <Modal visible={!gameInfo.isPlaying} toClose={restartGame}>
+                <h1>You lose bro, so sad! ;-;</h1>
+                <br/>
+                <h3>Your total score: {gameInfo.paths - 1}</h3>
+                <button onClick={restartGame}>Again!</button>
+            </Modal>
         </div>
     )
 }
 
 export default Core;
-
-/* for(let i = 0; pathsToRender.length < gameInfo.paths; i++){
-        if(pathsToRender.length < Math.ceil(gameInfo.paths / 3)){
-            pathsToRender.push(
-                <Path key={i} clicked={rightPathHandler} type='X'/>
-            );
-        }else{
-            pathsToRender.push(
-                <Path key={i} clicked={wrongPathHandler}/>
-            );
-        }
-    } */

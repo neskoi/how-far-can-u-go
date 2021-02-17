@@ -1,5 +1,5 @@
 .Core{
-    background-color: rgb(139, 89, 255);
     width: 100%;
-    overflow: hidden;
+    padding: 20px;
+    overflow: auto;
 }
