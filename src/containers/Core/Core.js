@@ -38,8 +38,8 @@ const Core = () => {
         return dbJson.checkNewRecord(gameInfo.paths - 1);
     }
 
-    const nickInputHandler = (e) => {
-        const nick = textInput.current.value.slice(0,10);
+    const nickInputHandler = () => {
+        const nick = textInput.current.value.slice(0,10) || "Who?";
         dbJson.setLocalBaseInfo(nick, gameInfo.paths - 1);
         setGameInfo({...gameInfo, recordist:false});
         restartGame();
