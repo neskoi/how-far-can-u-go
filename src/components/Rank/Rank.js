@@ -1,21 +1,10 @@
 import React from 'react';
 import './Rank.css';
 import Position from './Position/Position';
-import defaultRecords from '../../assets/data/ranking.json';
-
+import dbJason from '../../dataControl/localStorageManipulation';
 
 const rank = () => {
-    const recordStorage = localStorage;
-    let records;
-
-    if(!recordStorage.getItem('localRecords')){
-        const values = JSON.stringify(defaultRecords);
-        recordStorage.setItem('localRecords', values);
-        records = defaultRecords;
-    }else{
-        const localRecords = JSON.parse(recordStorage.getItem('localRecords'));
-        records = localRecords;
-    };
+    const records = dbJason.getLocalBaseInfo();
 
     const ranking = records.map(player => {
         return <Position key={player.id} nick={player.nick} score={player.score} recordDate={player.recordDate}/>;

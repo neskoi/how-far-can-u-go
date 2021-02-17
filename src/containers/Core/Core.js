@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Core.css';
 import Path from '../../components/Path/Path';
 import Score from '../../components/Score/Score';
 import Modal from '../../components/UI/Modal/Modal';
+import dbJson from '../../dataControl/localStorageManipulation';
 
 // TODO mover essa func, talvez.
 function shuffleArray(array) {
@@ -16,18 +17,32 @@ const Core = () => {
     const [gameInfo, setGameInfo] = useState({
         paths: 1,
         isPlaying: true,
+        recordist: false,
     });
+    
+    const textInput = useRef(null);
 
     const rightPathHandler = () => {
         setGameInfo({...gameInfo, paths: gameInfo.paths + 1});
     }
 
     const wrongPathHandler = () => {
-        setGameInfo({...gameInfo, isPlaying: false});
+        setGameInfo({...gameInfo, isPlaying: false, recordist: checkNewRecord()});
     }
 
     const restartGame = () => {
         setGameInfo({paths: 1, isPlaying: true});
+    }
+
+    const checkNewRecord = () => {
+        return dbJson.checkNewRecord(gameInfo.paths - 1);
+    }
+
+    const nickInputHandler = (e) => {
+        const nick = textInput.current.value.slice(0,10);
+        dbJson.setLocalBaseInfo(nick, gameInfo.paths - 1);
+        setGameInfo({...gameInfo, recordist:false});
+        restartGame();
     }
 
     let pathsToRender = [];
@@ -56,6 +71,13 @@ const Core = () => {
                 <h3>Your total score:</h3>
                 <h1>{gameInfo.paths - 1}</h1>
                 <button onClick={restartGame}>Try Again!</button>
+            </Modal>
+            <Modal visible={gameInfo.recordist}>
+                <h1>Wow! Good run bro.</h1>
+                <h2>You're a recordist now!!!</h2>
+                <h3>Tell me your name please:</h3>
+                <input type="textfield" ref={textInput} placeholder="Really, tell me it ASAP!"/>
+                <button onClick={nickInputHandler}>Done</button>
             </Modal>
         </div>
     )
