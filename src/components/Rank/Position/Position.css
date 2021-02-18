@@ -1,35 +1,38 @@
-.Position{
+.position{
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 25px;
     margin: 15px;
-    border: 1px solid #565656;
     border-radius: 5px;
     background-color: antiquewhite;
+    transition: transform 0.2s ease-out;
 }
 
-.Position > p {
+.position:hover{
+    transform: scale(1.1);
+}
+
+.position > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 33%;
+    vertical-align: center;
 }
 
-.Position > p:nth-child(2){
-    border-left: 1px solid #565656;
-    border-right: 1px solid #565656;
+.position > p:nth-child(2){
+    border-left: 1px solid #369696;
+    border-right: 1px solid #369696;
 }
 
 @media (max-width: 400px){
-    .Position > p {
+    .position > p {
         width: 50%;
     }
 
-    .Position > p:nth-child(2){
+    .position > p:nth-child(2){
         border-right: none;
-    }
-
-    .Position > p:nth-of-type(3){
-        display:none;
-        background-color: blueviolet;
     }
 }

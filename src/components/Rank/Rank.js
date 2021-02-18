@@ -3,7 +3,7 @@ import './Rank.css';
 import Position from './Position/Position';
 import dbJason from '../../dataControl/localStorageManipulation';
 
-const rank = () => {
+const Rank = () => {
     const records = dbJason.getLocalBaseInfo();
 
     const ranking = records.map(player => {
@@ -11,7 +11,7 @@ const rank = () => {
     });
     
     return (
-        <div className="Rank">
+        <div className="rank">
             <h1>R A N K I N G</h1>
             <strong><Position nick="Nickname" score="Score" recordDate="Date"/></strong>
             {ranking}
@@ -19,4 +19,4 @@ const rank = () => {
     );
 }
 
-export default rank;
+export default Rank;

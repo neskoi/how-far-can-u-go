@@ -3,8 +3,8 @@ import './Navbar.css';
 import {Link} from 'react-router-dom';
 
 
-const navbar = () => (
-    <nav className='Navbar'>
+const Navbar = () => (
+    <nav className='navbar'>
         <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/ranking">Ranking</Link></li>
@@ -13,4 +13,4 @@ const navbar = () => (
     </nav>
 )
 
-export default navbar;
+export default Navbar;

@@ -1,13 +1,13 @@
-.Score{
+.score{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60px;
-    width: 60px;
+    height: 70px;
+    width: 70px;
     margin: 0 auto 20px auto;
-    border: 3px groove #262626;
+    border: 2px solid #262626;
     border-radius: 10%;
     text-align: center;
     box-sizing: border-box;
-    font-size: 24px;
+    font-size: 30px;
 }

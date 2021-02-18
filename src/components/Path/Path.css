@@ -1,12 +1,16 @@
-.Path{
+.path{
     display: inline-block;
     height: 50px;
     width: 50px;
     margin: 5px;
-    border: 1px solid #666;
+    border: 2px solid #297373;
     border-radius: 10%;
+    background-color: #369696;
+    transition: transform 0.3s, background-color 0.4s ease-in;
 }
 
-.X{
-    background-color: green;
+.path:hover{
+    transform: scale(1.2);
+    border: 2px solid #FFA400;
+    background-color: #FFB833;
 }

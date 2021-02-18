@@ -1,4 +1,4 @@
-.Modal{
+.modal{
     position: fixed;
     display: flex;
     flex-flow: column;
@@ -17,19 +17,19 @@
     z-index: 100;
 }
 
-.Modal > p {
+.modal > p {
     width: 100%;
     text-align: center;
 }
 
-.Modal > button {
+.modal > button {
     height: 40px;
     width: 120px;
     margin: 5px;
 }
 
 @media (max-width: 400px){
-    .Modal{
+    .modal{
         width: 80%;
         left: 10%;
         height: 250px;

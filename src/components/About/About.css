@@ -1,4 +1,4 @@
-.About{
+.about{
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -11,28 +11,29 @@
     border-radius: 5px;
 }
 
-.About > a {
+.about > a {
     color: black;
     text-decoration: none;
 }
 
-.About > a:hover {
+.about > a:hover {
     color: goldenrod;
 }
 
-.GitLogo{
+.gitLogo{
     height: 64px;
     width: 64px;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url("../../assets/icons/GitHub-Mark-64px.png");
+    transition: transform 0.2s ease-out;
 }
 
-.GitLogo:hover{
+.gitLogo:hover{
     transform: scale(1.1);
 }
 
-.GitLogo:active{
+.gitLogo:active{
     transform: scale(0.9);
 }
 

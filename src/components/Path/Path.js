@@ -1,9 +1,9 @@
 import React from 'react';
 import './Path.css';
 
-const path = ({clicked, type}) => (
-    <div className={'Path ' + type} onClick={clicked}>
+const Path = ({clicked, type}) => (
+    <div className={'path ' + type} onClick={clicked}>
     </div>
 )
 
-export default path;
+export default Path;

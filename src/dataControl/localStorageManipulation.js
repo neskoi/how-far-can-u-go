@@ -21,18 +21,18 @@ const getLocalBaseInfo = () => {
 
 const setLocalBaseInfo = (nick = "Who?", score) => {
     existenceCheck();
-    let aux;
+    let oldValue;
     const date = new Date();
     const nowDateString = `${date.getFullYear()}/${date.getMonth()}/${date.getDay()}`;
     let actualScore = {score: score, nick: nick, recordDate: nowDateString};
 
     const records = JSON.parse(localStorage.getItem('localRecords'));
 
-    for(let i = 0; i < records.length; i++){
-        if(actualScore.score >= records[i].score){
-            aux = records[i];
-            records[i] = {...actualScore, id: records[i].id};
-            actualScore = aux;
+    for(let index = 0; index < records.length; index++){
+        if(actualScore.score >= records[index].score){
+            oldValue = records[index];
+            records[index] = {...actualScore, id: records[index].id};
+            actualScore = oldValue;
         }
     }
 

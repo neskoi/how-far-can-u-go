@@ -1,11 +1,11 @@
-.BottomBar{
+.bottomBar{
     position: fixed;
     left: 0;
     bottom: 0;
     height: 40px;
     width: 100%;
-    background-color: #363636;
+    background-color: #040403;
     color: antiquewhite;
     text-align: center;
-    border-top: 3px groove rgb(0, 255, 191);
+    border-top: 3px groove #FFA400;
 }

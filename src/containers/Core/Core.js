@@ -5,14 +5,6 @@ import Score from '../../components/Score/Score';
 import Modal from '../../components/UI/Modal/Modal';
 import dbJson from '../../dataControl/localStorageManipulation';
 
-// TODO mover essa func, talvez.
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
 const Core = () => {
     const [gameInfo, setGameInfo] = useState({
         paths: 1,
@@ -21,6 +13,13 @@ const Core = () => {
     });
     
     const textInput = useRef(null);
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
 
     const rightPathHandler = () => {
         setGameInfo({...gameInfo, paths: gameInfo.paths + 1});
@@ -62,7 +61,7 @@ const Core = () => {
     shuffleArray(pathsToRender);
 
     return (
-        <div className='Core'>
+        <div className='core'>
             <Score distance={gameInfo.paths - 1}/>
             {pathsToRender}
             <Modal visible={!gameInfo.isPlaying} toClose={restartGame}>

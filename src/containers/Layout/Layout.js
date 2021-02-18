@@ -1,17 +1,17 @@
 import React from 'react';
 import './Layout.css';
-import Navbar from '../../components/UI/navbar/Navbar';
-import BottomBar from '../../components/UI/bottomBar/bottomBar';
+import Navbar from '../../components/UI/Navbar/Navbar';
+import BottomBar from '../../components/UI/BottomBar/BottomBar';
 
 
-const layout = ({children}) => (
-    <div className='Layout'>
+const Layout = ({children}) => (
+    <div className='layout'>
         <Navbar/>
-            <div className="Body">
+            <div className="body">
                 {children}
             </div>
         <BottomBar/>
     </div>
 );
 
-export default layout;
+export default Layout;
